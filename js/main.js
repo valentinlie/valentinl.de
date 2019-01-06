@@ -18,6 +18,19 @@ function loadImage(id, targetId) {
   }
 }
 document.addEventListener('DOMContentLoaded', function() {
+  text();
   loadImage('wallpaper');
   loadImage('pictureImage', 'picture');
 });
+
+function text() {
+	var bday = 2000
+  var today = new Date()
+  var age = today.getFullYear() - bday
+
+$.getJSON("https://ferien-api.de/api/v1/holidays/BB"), function(data) {
+  console.log(data);
+}
+
+  document.getElementById('text').innerHTML = "Hello, I am a " + age + " years old Student from Potsdam, Germany. Currently I am in the 12th grade and doing my A-level.";
+}
