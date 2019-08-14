@@ -35,7 +35,7 @@ function text() {
   document.getElementById("text").innerHTML =
     "Hello, I am a " +
     age +
-    " years old Student from Potsdam, Germany. Currently I am in the 12th grade and doing my A-level.";
+    " years old Student from Potsdam, Germany. Currently I am in the 13th grade and doing my A-level.";
 }
 
 function getAge(dateString) {
