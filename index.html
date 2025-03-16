@@ -1,79 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/src/assets/valentin.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/minireset.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+  <link rel="stylesheet" href="/src/styles/components/layout.css">
+  <link rel="stylesheet" href="/src/styles/components/profile.css">
+  <link rel="stylesheet" href="/src/styles/components/buttons.css">
   <title>Valentin Lieberknecht – Student</title>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-  <script defer type="text/javascript" src="js/main.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/minireset.min.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/animations.css">
-  <link rel="icon" sizes="192x192" href="images/valentin.png">
 </head>
 
 <body>
-  <div id="wallpaper" class="wallpaper" data-image="images/austria.jpg"></div>
+  <div id="wallpaper" class="wallpaper" data-image="/src/assets/austria.jpg"></div>
   <div class="content">
-
     <aside class="side">
       <figure id="picture" class="picture">
         <div class="picture-shadow"></div>
-        <img id="pictureImage" class="picture-image" src="images/valentin.png" alt="Portrait of Valentin Lieberknecht" width="320" height="320">
+        <img id="pictureImage" class="picture-image" src="/src/assets/valentin.png"
+          alt="Portrait of Valentin Lieberknecht" width="320" height="320">
       </figure>
     </aside>
     <ul class="social">
       <li>
-        <a href="https://twitter.com/vale5566" target="_blank">
-<i class="fab fa-twitter"></i>
-</a>
+        <a href="https://github.com/valentinlie" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
       </li>
       <li>
-        <a href="https://github.com/vale5566" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/vale5566" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/valentin-lieberknecht-b61819159" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
+        <a href="https://www.linkedin.com/in/valentin-lieberknecht" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </li>
     </ul>
     <main class="about">
-      <h1 class="name">
-  Hi, I'm Valentin Lieberknecht
-  </h1>
-      <p class="job">
-        Student
-      </p>
+      <h1 class="name">Hi, I'm Valentin Lieberknecht</h1>
+      <p class="job">Student</p>
       <hr class="hr">
       <div class="description">
-        <p id="text">
-        </p>
+        <p id="text"></p>
       </div>
       <div class="contact">
-        <a class="button" href="mailto:me@valentinl.space">Get in touch</a>
+        <a class="button" href="mailto:me@valentinl.de">Get in touch</a>
       </div>
     </main>
-    <noscript>
-<style type="text/css">
-.wallpaper {
-animation-name: zoomOut;
-}
-.picture {
-animation-name: dropIn;
-}
-</style>
-</noscript>
-</div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
 </body>
+
 </html>

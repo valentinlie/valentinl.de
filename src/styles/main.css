@@ -1,0 +1,42 @@
+:root {
+  --primary-color: #5f45bb;
+  --gradient-start: #180cac;
+  --gradient-end: #d054e4;
+  --accent-color: #ff470f;
+  --highlight-color: #ffe479;
+  --button-color: #9013fe;
+  --text-color: #fff;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+html {
+  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: var(--text-color);
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-width: 300px;
+  overflow-x: hidden;
+  text-shadow: 0 3px 5px var(--shadow-light);
+  margin: 0;
+}
+
+a {
+  color: currentColor;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
