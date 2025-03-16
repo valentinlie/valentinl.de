@@ -2,13 +2,14 @@ import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { putAge } from "./utils/age";
-import { loadImage } from "./utils/images";
+import { loadWallpaper, loadProfilePicture } from "./utils/images";
+import austriaImage from "./assets/austria.jpg";
+import profilePicture from "./assets/valentin.png";
 
-library.add(faGithub, faLinkedin);
-
-dom.watch();
+loadProfilePicture(profilePicture);
+loadWallpaper(austriaImage);
 
 putAge();
 
-loadImage("wallpaper", "wallpaper");
-loadImage("pictureImage", "picture");
+library.add(faGithub, faLinkedin);
+dom.watch();
