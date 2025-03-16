@@ -1,4 +1,13 @@
-export function getAge(dateString: string): number {
+export function putAge(): void {
+  const age = getAge("2000/12/12");
+  const textEl = document.getElementById("text") as HTMLImageElement | null;
+
+  if (textEl) {
+    textEl.innerHTML = `Hello, I am a ${age} years old Student from Münster, Germany. Currently I am studying Information Systems.`;
+  }
+}
+
+function getAge(dateString: string): number {
   const today = new Date();
   const birthDate = new Date(dateString);
   let age = today.getFullYear() - birthDate.getFullYear();
@@ -9,13 +18,4 @@ export function getAge(dateString: string): number {
   }
 
   return age;
-}
-
-export function putAge(): void {
-  const age = getAge("2000/12/12");
-  const textEl = document.getElementById("text");
-
-  if (textEl) {
-    textEl.innerHTML = `Hello, I am a ${age} years old Student from Münster, Germany. Currently I am studying Business Informatics.`;
-  }
 }
