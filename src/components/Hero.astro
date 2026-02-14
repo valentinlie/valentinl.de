@@ -1,0 +1,116 @@
+---
+
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="greeting">Hi there, I am</div>
+    <h1 class="hero-name">Valentin Lieberknecht</h1>
+    <p class="tagline">
+      Information Systems Student & DevOps Enthusiast
+    </p>
+    <p class="intro">
+      I'm passionate about building reliable, scalable infrastructure and automating everything.
+      Currently studying Information Systems and working towards a career in DevOps,
+      where I can combine my love for coding with system administration and cloud technologies.
+    </p>
+    <a href="mailto:contact@valentinl.de" class="btn btn-primary">Get In Touch</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 6rem 0 4rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero-name {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .hero-content {
+    animation: fadeIn 1.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .greeting {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--color-text) 0%, var(--color-text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+    transform: translateY(-2px);
+  }
+</style>

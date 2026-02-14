@@ -1,0 +1,110 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/resume', label: 'Resumé' },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/valentinlie', label: 'GitHub', icon: 'simple-icons:github' },
+  { href: 'https://linkedin.com/in/valentin-lieberknecht', label: 'LinkedIn', icon: 'simple-icons:linkedin' },
+  { href: 'mailto:contact@valentinl.de', label: 'Email', icon: 'simple-icons:maildotru' },
+];
+---
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href="/" class="logo">VL</a>
+      <ul class="nav-links">
+        {navLinks.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="social-links">
+        {socialLinks.map((link) => (
+          <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+            <Icon name={link.icon} size={20} />
+          </a>
+        ))}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-text);
+  }
+
+  .logo:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    color: var(--color-text-muted);
+    transition: color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    color: var(--color-text);
+  }
+
+  @media (max-width: 640px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

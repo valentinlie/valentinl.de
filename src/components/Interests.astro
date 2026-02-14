@@ -1,0 +1,107 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const interests = [
+  {
+    title: 'Open Source',
+    description: 'Contributing to and learning from open source projects, especially in the DevOps ecosystem.',
+    icon: 'simple-icons:opensourceinitiative',
+  },
+  {
+    title: 'Home Lab',
+    description: 'Running my own home server setup to experiment with new technologies and self-hosting services.',
+    icon: 'simple-icons:homeassistant',
+  },
+  {
+    title: 'Continuous Learning',
+    description: 'Always exploring new tools, reading tech blogs, and working towards certifications.',
+    icon: 'simple-icons:gitbook',
+  },
+  {
+    title: 'Automation',
+    description: 'Finding ways to automate repetitive tasks and improve developer experience.',
+    icon: 'simple-icons:n8n',
+  },
+];
+---
+
+<section id="interests" class="interests">
+  <h2>My Interests</h2>
+  <p class="section-intro">
+    Beyond studying, here's what keeps me busy and motivated in the tech world.
+  </p>
+
+  <div class="interests-grid">
+    {interests.map((interest) => (
+      <div class="interest-card">
+        <div class="interest-icon">
+          <Icon name={interest.icon} size={24} />
+        </div>
+        <h3>{interest.title}</h3>
+        <p>{interest.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .interests {
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-intro {
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .interest-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .interest-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+  }
+
+  .interest-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+  }
+
+  .interest-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .interest-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>
