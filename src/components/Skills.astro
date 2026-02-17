@@ -10,6 +10,7 @@ const skills = [
   { name: 'Git', icon: 'simple-icons:git', color: '#F05032' },
   { name: 'Python', icon: 'simple-icons:python', color: '#3776AB' },
   { name: 'TypeScript', icon: 'simple-icons:typescript', color: '#3178C6' },
+  { name: 'PyTorch', icon: 'simple-icons:pytorch', color: '#EE4C2C' },
   //{ name: 'REST API', icon: 'api', color: '#009688' },
 ];
 
@@ -69,7 +70,7 @@ import { Icon } from 'astro-icon/components';
 
 <style>
   .skills {
-    padding: 4rem 0;
+    padding: 2rem 0;
     overflow: hidden;
   }
 
@@ -168,7 +169,7 @@ import { Icon } from 'astro-icon/components';
 
   .skill-tag:hover {
     border-color: var(--skill-color);
-    transform: scale(1.05);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--skill-color) 40%, transparent);
   }
 
   .skill-tag:hover .skill-icon {
@@ -181,7 +182,7 @@ import { Icon } from 'astro-icon/components';
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-muted);
+    color: var(--skill-color);
     transition: color 0.3s ease;
   }
 

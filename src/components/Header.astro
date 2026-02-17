@@ -4,13 +4,12 @@ import { Icon } from 'astro-icon/components';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
-  { href: '/resume', label: 'Resumé' },
 ];
 
 const socialLinks = [
   { href: 'https://github.com/valentinlie', label: 'GitHub', icon: 'simple-icons:github' },
   { href: 'https://linkedin.com/in/valentin-lieberknecht', label: 'LinkedIn', icon: 'simple-icons:linkedin' },
-  { href: 'mailto:contact@valentinl.de', label: 'Email', icon: 'simple-icons:maildotru' },
+  { href: 'mailto:me@valentinl.de', label: 'Email', icon: 'simple-icons:maildotru' },
 ];
 ---
 
@@ -41,7 +40,7 @@ const socialLinks = [
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(17, 15, 13, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
   }
@@ -50,7 +49,7 @@ const socialLinks = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1.25rem 1.5rem;
     max-width: 800px;
     margin: 0 auto;
   }
@@ -58,13 +57,14 @@ const socialLinks = [
   .nav-left {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .logo {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--color-text);
+    letter-spacing: -0.02em;
   }
 
   .logo:hover {
@@ -74,12 +74,12 @@ const socialLinks = [
   .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .nav-links a {
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
     transition: color 0.2s ease;
   }
@@ -90,7 +90,7 @@ const socialLinks = [
 
   .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .social-links a {

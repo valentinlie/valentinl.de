@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Blog - Valentin Lieberknecht">
+  <Header />
+  <section class="coming-soon">
+    <h1>Blog</h1>
+    <p>Coming soon.</p>
+  </section>
+</Layout>
+
+<style>
+  .coming-soon {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+  }
+</style>
