@@ -11,7 +11,6 @@ const skills = [
   { name: 'Python', icon: 'simple-icons:python', color: '#3776AB' },
   { name: 'TypeScript', icon: 'simple-icons:typescript', color: '#3178C6' },
   { name: 'PyTorch', icon: 'simple-icons:pytorch', color: '#EE4C2C' },
-  //{ name: 'REST API', icon: 'api', color: '#009688' },
 ];
 
 import { Icon } from 'astro-icon/components';
@@ -23,6 +22,8 @@ import { Icon } from 'astro-icon/components';
     Technologies I work with and am continuously learning to build robust, automated infrastructure.
   </p>
 
+  <input class="marquee-pause" type="checkbox" id="pause-skills" />
+  <label for="pause-skills">Pause animation</label>
   <div class="marquee-container">
     <div class="marquee-row">
       <div class="marquee-content">
@@ -35,7 +36,7 @@ import { Icon } from 'astro-icon/components';
           </div>
         ))}
         {skills.map((skill) => (
-          <div class="skill-tag" style={`--skill-color: ${skill.color}`}>
+          <div class="skill-tag" style={`--skill-color: ${skill.color}`} aria-hidden="true">
             <span class="skill-icon">
               <Icon name={skill.icon} size={20} />
             </span>
@@ -45,7 +46,7 @@ import { Icon } from 'astro-icon/components';
       </div>
     </div>
 
-    <div class="marquee-row reverse">
+    <div class="marquee-row reverse" aria-hidden="true">
       <div class="marquee-content">
         {[...skills].reverse().map((skill) => (
           <div class="skill-tag" style={`--skill-color: ${skill.color}`}>
@@ -86,11 +87,20 @@ import { Icon } from 'astro-icon/components';
     font-size: 1.1rem;
   }
 
+  .marquee-pause {
+    margin-right: 0.5rem;
+  }
+
+  label {
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
   .marquee-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 0 -1.5rem;
+    margin: 1rem -1.5rem 0;
   }
 
   .marquee-row {
@@ -130,6 +140,7 @@ import { Icon } from 'astro-icon/components';
     animation: scroll-reverse 25s linear infinite;
   }
 
+  .marquee-pause:checked ~ .marquee-container .marquee-content,
   .marquee-row:hover .marquee-content {
     animation-play-state: paused;
   }
@@ -139,13 +150,13 @@ import { Icon } from 'astro-icon/components';
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(calc(-50% - 0.5rem));
     }
   }
 
   @keyframes scroll-reverse {
     0% {
-      transform: translateX(-50%);
+      transform: translateX(calc(-50% - 0.5rem));
     }
     100% {
       transform: translateX(0);
@@ -164,7 +175,7 @@ import { Icon } from 'astro-icon/components';
     font-weight: 500;
     border: 1px solid var(--color-border);
     white-space: nowrap;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .skill-tag:hover {
@@ -193,5 +204,25 @@ import { Icon } from 'astro-icon/components';
 
   .skill-name {
     color: var(--color-text);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-pause,
+    label,
+    .marquee-row.reverse,
+    .skill-tag[aria-hidden="true"],
+    .marquee-row::before,
+    .marquee-row::after {
+      display: none;
+    }
+
+    .marquee-container {
+      margin: 0;
+    }
+
+    .marquee-content {
+      width: auto;
+      flex-wrap: wrap;
+    }
   }
 </style>
